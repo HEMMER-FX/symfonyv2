@@ -1,0 +1,13 @@
+@import "~bootstrap/scss/bootstrap";
+
+// customize some Bootstrap variables
+$theme-colors: (
+        "primary": blue,
+        "danger": magenta,
+        "warning": red,
+        "success": yellow
+);
+
+body{
+  background-color: rgb(83, 20, 83);
+}

@@ -1,0 +1,18 @@
+$primary:       red;
+$secondary:     orange;
+$success:       blue;
+$info:          red;
+$warning:       red;
+$danger:        red;
+
+// customize some Bootstrap variables
+$theme-colors: (
+        "primary": blue,
+        "danger": magenta,
+        "warning": red,
+        "success": yellow
+);
+
+body{
+  background-color: magenta;
+}
