@@ -3,13 +3,34 @@
 {% block title %}Index!{% endblock %}
 
 {% block body %}
+    <div>
+        <h1 class="card text-white bg-dark mb-3"> Série les plus vues du moment </h1>
+        
+        <div>
+            <a href=""><img src="{{ asset('build/GOT.jpg') }}" class="img_home_index" alt="ACME logo"></a>
+            <a href=""><img src="{{ asset('build/breackingbad.jpeg') }}"  class="img_home_index"alt="breackingbad.jpeg"></a>
+            <a href=""><img src="{{ asset('build/walking.jpg') }}"  class="img_home_index"alt="walking logo"></a>
+            <a href=""><img src="{{ asset('build/znation.jpg') }}" class="img_home_index" alt="znation logo"></a>
+        </div>
+    </div>
+    <div>
+        <h1 class="card text-white bg-dark mb-3"> Série les mieux notées </h1>
 
+            <div>
+            <a href=""><img src="{{ asset('build/GOT.jpg') }}" class="img_home_index" alt="ACME logo"></a>
+            <a href=""><img src="{{ asset('build/breackingbad.jpeg') }}"class="img_home_index" alt="breackingbad.jpeg"></a>
+            <a href=""><img src="{{ asset('build/walking.jpg') }}" class="img_home_index"alt="walking logo"></a>
+            <a href=""><img src="{{ asset('build/znation.jpg') }}" class="img_home_index" alt="znation logo"></a>
+        </div>
+    </div>
+    <div>
+        <h1 class="card text-white bg-dark mb-3"> Série pour les plus jeunes</h1>
 
-<div>
-    <img src="{{ asset('build/GOT.jpg') }}" alt="ACME logo">
-    <img src="{{ asset('build/breackingbad.jpeg') }}" alt="breackingbad.jpeg">
-    <img src="{{ asset('build/walking.jpg') }}" alt="walking logo">
-    <img src="{{ asset('build/znation.jpg') }}" alt="znation logo">
-</div>
-
+            <div>
+            <a href=""><img src="{{ asset('build/GOT.jpg') }}" class="img_home_index" alt="ACME logo"></a>
+            <a href=""><img src="{{ asset('build/breackingbad.jpeg') }}" class="img_home_index"alt="breackingbad.jpeg"></a>
+            <a href=""><img src="{{ asset('build/walking.jpg') }}" class="img_home_index" alt="walking logo"></a>
+            <a href=""><img src="{{ asset('build/znation.jpg') }}" class="img_home_index" alt="znation logo"></a>
+        </div>
+    </div>
 {% endblock %}

@@ -1,22 +1,21 @@
-<h1>test</h1>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-     <img src="././assets/images/GOT.jpg" alt="" width="30" height="24" class="d-inline-block align-text-top">
-    <a class="navbar-brand" href="#">Navbar</a>
+     <img src="{{ asset('build/got.jpg')}}" alt="" width="30" height="24" class="d-inline-block align-text-top">
+    <a class="navbar-brand" href="#">Accueil</a>
     
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" href="#">Série gore</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link" href="#">Série tout public</a>
         </li>
       </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
+      <form class="d-flex" method="get" >
+        <input class="form-control me-2" type="search" placeholder="Rechercher une série" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Rechercher</button>
       </form>
     </div>
   </div>
