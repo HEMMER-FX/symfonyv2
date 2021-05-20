@@ -2,13 +2,19 @@
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Psr\Log\LoggerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class ProgramController extends AbstractController
 {
+    protected $logger;
+    public function __construct(LoggerInterface $logger)
+    {
+        $this->logger = $logger;
+    }
 
     /**
      * @Route("/programs/{page}", requirements={"page"="\d+"}, methods={"GET"},name="program_show")
@@ -19,10 +25,11 @@ class ProgramController extends AbstractController
     }
 
     /**
-     * @Route("/programs/{programe}",  name="test_program")
+     * @Route("/programs/{programs</d+>?0}",  name="test_program"), methods={"GET","POST"}
      */
     public function test(Request $request): Response
     {
+        $this->logger->error("une demande de programme a était faite");
         $programe = $request->query->get('programs',null);
         return $this->render('program/index.html.twig', ['Programs_demande' => $programe]);
     }
