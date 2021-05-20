@@ -19,12 +19,10 @@ class ProgramController extends AbstractController
     }
 
     /**
-     * @Route("/programs/", name="test_program")
+     * @Route("/programs/{programe}",  name="test_program")
      */
-    public function test(): Response
+    public function test(Request $request): Response
     {
-        $request = Request::createFromGlobals();
-
         $programe = $request->query->get('programs',null);
         return $this->render('program/index.html.twig', ['Programs_demande' => $programe]);
     }
