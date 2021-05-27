@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Category {% endblock %}
+
+{% block body %}
+
+    {% for category in categories %}
+        <div class="container">
+            <h1> Catégories existantes </h1>
+            <a href="{{path ('category_show', {categoryName: category.name}) }}"><h2> {{ category.name }} </h2></a>
+        </div>
+    {% endfor %}
+        <div class="container">
+            <a href="{{ path('category_empty')}}"><h2>Cul</h2></a>
+        </div>
+{% endblock %}
