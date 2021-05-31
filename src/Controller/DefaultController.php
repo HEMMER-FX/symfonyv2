@@ -8,7 +8,7 @@ class DefaultController extends AbstractController
 {
     /**
      * Undocumented function
-     * @Route("/homepage", name="app_index")
+     * @Route("/", name="app_index")
      *
      * @return void
      */
