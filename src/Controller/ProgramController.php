@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-
+use App\Form\ProgramType;
 use App\Entity\Episode;
 use App\Entity\Season;
 use App\Entity\Program;
@@ -11,6 +11,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Form\FormTypeInterface;
 /**
  * @Route ("/programs", name="program_")
  */
@@ -28,6 +29,39 @@ class ProgramController extends AbstractController
             'programs' => $programs
         ]);
 
+    }
+
+    /**
+     * @Route("/new", name="new")
+     */
+    public function new(Request $request)
+    {
+        //création nouveau objet program
+        $program = new Program();
+
+        // création de formulaire pour utiliser l'entité program
+        $form = $this->createForm(ProgramType::class, $program);
+
+        //envoyer le program a la http foundation method
+        $form->handleRequest($request);
+        
+        //si bouton pressé
+        if($form->isSubmitted()){
+            
+            //faire la conenxion avec bdd
+            $entityManager = $this->getDoctrine()->getManager();
+
+            // persist form donnée
+            $entityManager->persist($program);
+
+            $entityManager->flush();
+
+            return $this->redirectToRoute('program_programs_index');
+        }
+
+        return $this->render('program/new.html.twig', [
+            'form' => $form->createView()
+        ]);
     }
 
     /**
@@ -61,6 +95,19 @@ class ProgramController extends AbstractController
         return $this->render('program/season_show.html.twig', [
             'program' => $program,
             'season'  => $season,
+            'episodes' => $episode
+        ]);
+    }
+
+    /**
+     * @Route("/{program}/season/{season}/episode/{episode}",  methods={"GET"}, name="episode_show")
+     */
+    public function showEpisode(Program $program, Season $season, Episode $episode)
+    {
+        $season = $program->getSeasons();
+        return $this->render('episodes/show.html.twig', [
+            'program' => $program,
+            'season' => $season,
             'episodes' => $episode
         ]);
     }

@@ -19,10 +19,13 @@
       
       {% for seasons in season %} 
         <a href="{{ path('program_season_show', {program :program.id , season :seasons.id}) }} ">saisons {{ seasons.number }}</a>
+          
+
       {% endfor %}
 
       {% for episode in episodes %}
         <h1> {{ episode.title }} </h1>
+        
       {% endfor %}
     </div>
 
@@ -30,7 +33,7 @@
 
 </div>
 
-   {#} <a href="{{ path('home') }}">
+    <a href="{{ path('program_programs_index') }}">
         Retour a la liste des séries
-    </a>#}
+    </a>
 {% endblock %} 

@@ -3,10 +3,12 @@
 {% block title %} Category {% endblock %}
 
 {% block body %}
+    <h1>Pour ajouter une catégorie => <a href="{{ path('category_new')}}"> Par Ici </a></h1>
 
+    <h1> Catégories existantes </h1>
+    
     {% for category in categories %}
         <div class="container">
-            <h1> Catégories existantes </h1>
             <a href="{{path ('category_show', {categoryName: category.name}) }}"><h2> {{ category.name }} </h2></a>
         </div>
     {% endfor %}
