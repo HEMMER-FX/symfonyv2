@@ -2,8 +2,11 @@
 {% block title %}All programs{% endblock title %}
 
 {% block body %}
+
+    <h1><a href="{{ path('program_new')}}">Pour ajouter une série</a></h1>
+    <h1><a href="{{ path('category_index')}}">Pour voir les différentes catégories</a></h1>
     
-<h1>Toutes les séries </h1>
+    <h1>Toutes les séries </h1>
     {% for program in programs %}
     <div>
 
@@ -11,7 +14,6 @@
         <a href="{{path('program_show', {id:program.id})}}"><img src="{{ program.poster }}" alt="image d'une série" style="width:250px;height:250px;"></a>
         <p>{{ program.summary }}</p>
 
-        {#<a href="{{path('show', {id: program.id})}}">Voir la fiche</a>#}
     </div>
     {% else %}
         <h1>Aucune série trouvée</h1>
