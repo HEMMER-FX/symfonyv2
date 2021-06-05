@@ -13,7 +13,7 @@ use Symfony\Component\Validator\Mapping\ClassMetadata;
 
 /**
  * @ORM\Entity(repositoryClass=ProgramRepository::class)
- * @UniqueEntity("title");
+ * @UniqueEntity("title", message="Ce titre est déjà pris ! ")
  */
 class Program
 {
@@ -31,18 +31,6 @@ class Program
      * 
      */
     private $title;
-    public static function loadValidatorMetadata(ClassMetadata $metadata)
-    {
-        $metadata->addConstraint(new UniqueEntity([
-            'fields' => 'title',
-        ]));
-
-        $metadata->addPropertyConstraint('title', new Assert\Regex([
-            'pattern' => '/Plus belle la vie/',
-            'match' => false,
-            'message' => 'On parle de vraies séries ici',
-        ]));
-    }
 
     /**
      * @ORM\Column(type="text")

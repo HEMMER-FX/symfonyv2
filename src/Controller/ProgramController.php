@@ -46,7 +46,7 @@ class ProgramController extends AbstractController
         $form->handleRequest($request);
         
         //si bouton pressé
-        if($form->isSubmitted()){
+        if($form->isSubmitted() && $form->isValid()) {
             
             //faire la conenxion avec bdd
             $entityManager = $this->getDoctrine()->getManager();
