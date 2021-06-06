@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ parent() }} - actor 
+{% endblock title %}
+
+{% block body %}
+    {% for item in actor %}
+        {{ item.name }}
+    {% endfor %}test
+
+            <h1>{{actor.firstname}}</h1>
+
+    <ul>
+        {% for program in actor.program %}
+            <li><a href="{{ path("program_show", {id: program.id}) }}"> {{ program.title }} </a></li>
+        {% else %}
+            <li>Pas de films associés</li>
+        {% endfor %}
+    </ul>
+{% endblock body %}
