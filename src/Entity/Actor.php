@@ -51,6 +51,11 @@ class Actor
         return $this->id;
     }
 
+    public function getPresentationArtist(): string
+    {
+        return $this->getFirstname() . ' ' . $this->getLastname();
+    }
+
     public function getFirstname(): ?string
     {
         return $this->firstname;
